@@ -27,6 +27,25 @@ You are encouraged to use this tool for:
 
 Please be aware that this tool is not intended for commercial use.
 
+## Licensing
+
+This project is made available under a dual-license structure.
+
+#### Code License (MIT)
+
+The source code for this application (files such as `app.py`, etc.) is licensed under the permissive **MIT License**. This allows for broad reuse of the software, even in commercial applications. You can find the full license text in the `LICENSE` file in this repository.
+
+#### Data License (CC BY-NC 4.0)
+
+The dataset (`EcoScamper_data_V2.csv`) is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License**.
+
+This means you are free to share and adapt the data for **non-commercial purposes only**, as long as you provide proper attribution.
+
+-   **Attribution** — You must give appropriate credit by citing this work (see the "How to Cite" section).
+-   **NonCommercial** — You may not use the material for commercial purposes.
+
+For the full legal code, please visit: [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+
 ## How to Cite This Work
 
 If you use this tool or its dataset in your research, please cite it as follows. This ensures that the original work is properly attributed.

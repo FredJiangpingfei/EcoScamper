@@ -1,11 +1,11 @@
 # EcoScamper
-# Sustainable Design Explorer (EcoScamper)
+# Sustainable Product Design Toolkit (EcoScamper)
 
 A web-based tool for exploring sustainable design strategies and creative techniques, based on an analysis of real-world product case studies.
 
 ## About This Project
 
-This interactive tool is a component of a research project developed at University of Exeter. Its primary purpose is to provide designers, researchers, and students with tangible insights into how sustainability and creativity intersect in product design.
+This interactive tool is a component of a research project developed at the University of Exeter. Its primary purpose is to provide designers, researchers, and students with tangible insights into how sustainability and creativity intersect in product design.
 
 The application allows users to filter a curated database of design inspirations by:
 -   High-level sustainability goals (Tier 1 Strategies)

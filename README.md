@@ -31,5 +31,5 @@ Please be aware that this tool is not intended for commercial use.
 
 If you use this tool or its dataset in your research, please cite it as follows. This ensures that the original work is properly attributed.
 
-> Jiang, P. 2025. "EcoScamper: A Sustainable Product Design Toolkit" [Dataset]. Retrieved from https://github.com/FredJiangpingfei/EcoScamper.
+Jiang, P. (2025). EcoScamper: A sustainable product design toolkit [Dataset]. GitHub. https://github.com/FredJiangpingfei/EcoScamper
 

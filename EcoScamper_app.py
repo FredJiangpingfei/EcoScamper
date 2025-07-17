@@ -22,7 +22,7 @@ st.set_page_config(
 def load_data():
     # In a real app, you would load your data from a file (e.g., pd.read_csv('your_data.csv'))
     # For this example, I'm recreating the data preparation steps from Step 0.
-    file_path = "C:/Users/jiang/OneDrive - University of Exeter/RESEARCH/Python Scripts/EcoScamper.csv" 
+    file_path = "EcoScamper.csv" 
     df = pd.read_csv(file_path, encoding='latin-1')
     return df
     

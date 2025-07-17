@@ -9,6 +9,56 @@ import streamlit as st
 import pandas as pd
 import json
 
+# --- HIERARCHY DATA ---
+# This dictionary defines the relationship between Tier 1 and Tier 2 strategies.
+STRATEGY_HIERARCHY = {
+    "Dematerialization": [
+        "Content reduction",
+        "Design for value",
+        "Digitisation",
+        "Weight reduction",
+        "Minimal material and packaging",
+        "Generative design"
+    ],
+    "Next-Best Material Selection": [
+        "Renewable and biodegradable material",
+        "Recycled material",
+        "Recyclable material",
+        "Lightweight material"
+    ],
+    "Green Supply Chain": [
+        "Frugal processes and operations",
+        "Detoxified processes",
+        "Standardisation and modularity",
+        "Design for logistics"
+    ],
+    "Longevity and Effective Usage": [
+        "Design for repairability and maintenance",
+        "Design for upgradability and adaptability",
+        "Design to last",
+        "Design for remanufacturing",
+        "Design for multiple uses"
+    ],
+    "Product efficiency": [
+        "Variable energy consumption",
+        "Energy consumption efficiency",
+        "Material consumption efficiency",
+        "Change consumer behavior"
+    ],
+    "Circularity": [
+        "Design for disassembly",
+        "Design for end-of-life collection",
+        "Design for reuse",
+        "Enable material traceability",
+        "Enable material homogeneity"
+    ]
+}
+
+
+
+
+
+
 # --- Page Configuration (Set this at the top) ---
 st.set_page_config(
     page_title="Eco-Scamper: A Sustainable Product Design Toolkit",
@@ -22,7 +72,7 @@ st.set_page_config(
 def load_data():
     # In a real app, you would load your data from a file (e.g., pd.read_csv('your_data.csv'))
     # For this example, I'm recreating the data preparation steps from Step 0.
-    file_path = "EcoScamper.csv" 
+    file_path = "C:/Users/jiang/OneDrive - University of Exeter/RESEARCH/Python Scripts/EcoScamper.csv" 
     df = pd.read_csv(file_path, encoding='latin-1')
     return df
     
@@ -46,12 +96,20 @@ if df is not None:
             selected_case = st.selectbox("Case Study:", options=case_options)
 
         with col2:
-            tier1_options = ['Any'] + sorted(df['tier1_strategy'].unique().tolist())
-            selected_tier1 = st.selectbox("Tier 1 Sustainable Strategy:", options=tier1_options)
+            # Tier 1 options are the keys of our hierarchy dictionary
+            tier1_options = ['Any'] + sorted(list(STRATEGY_HIERARCHY.keys()))
+            selected_tier1 = st.selectbox("Tier 1 Strategy:", options=tier1_options)
 
         with col3:
-            tier2_options = ['Any'] + sorted(df['tier2_strategy'].unique().tolist())
-            selected_tier2 = st.selectbox("Tier 2 Sustainable Strategy:", options=tier2_options)
+            # --- THIS IS THE NEW DYNAMIC LOGIC ---
+            if selected_tier1 == 'Any':
+                # If no Tier 1 is selected, show all unique Tier 2 strategies
+                tier2_options = ['Any'] + sorted(df['tier2_strategy'].unique().tolist())
+            else:
+                # If a Tier 1 is selected, get the sub-list from our dictionary
+                tier2_options = ['Any'] + sorted(STRATEGY_HIERARCHY[selected_tier1])
+            
+            selected_tier2 = st.selectbox("Tier 2 Strategy:", options=tier2_options)
 
         with col4:
             scamper_options = ['Any'] + sorted(df['SCAMPER'].unique().tolist())

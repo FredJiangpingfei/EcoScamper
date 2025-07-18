@@ -125,7 +125,7 @@ if df is not None:
         with col2:
             # Tier 1 options are the keys of our hierarchy dictionary
             tier1_options = ['Any'] + sorted(list(STRATEGY_HIERARCHY.keys()))
-            selected_tier1 = st.selectbox("Tier 1 Strategy:", options=tier1_options)
+            selected_tier1 = st.selectbox("Tier 1 Sustainability Strategy:", options=tier1_options)
 
         with col3:
             # Dynamic logic for Tier 2
@@ -136,7 +136,7 @@ if df is not None:
                 # If a Tier 1 is selected, get the sub-list from our dictionary
                 tier2_options = ['Any'] + sorted(STRATEGY_HIERARCHY[selected_tier1])
             
-            selected_tier2 = st.selectbox("Tier 2 Strategy:", options=tier2_options)
+            selected_tier2 = st.selectbox("Tier 2 Sustainability Strategy:", options=tier2_options)
 
         with col4:
             scamper_options = ['Any'] + sorted(df['SCAMPER_technique'].unique().tolist())

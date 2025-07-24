@@ -70,7 +70,7 @@ if 'searched' not in st.session_state:
 @st.cache_data
 def load_data():
     # IMPORTANT: Remember to change this to a relative path for deployment on Streamlit Cloud
-    file_path = "C:/Users/jiang/OneDrive - University of Exeter/RESEARCH/Python Scripts/EcoScamper.csv" 
+    file_path = "EcoScamper.csv" 
     df = pd.read_csv(file_path, encoding='latin-1')
     # Fill any empty cells in the 'Link' column with an empty string to prevent errors
     if 'Link' in df.columns:

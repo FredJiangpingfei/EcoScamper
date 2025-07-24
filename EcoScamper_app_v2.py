@@ -57,7 +57,7 @@ STRATEGY_HIERARCHY = {
 
 # --- Page Configuration (Set this at the top) ---
 st.set_page_config(
-    page_title="Eco-Scamper: A Sustainable Product Design Toolkit",
+    page_title="Eco-SCAMPER: A Sustainable Product Design Toolkit",
     page_icon="🛠️",
     layout="wide"
 )
@@ -86,7 +86,7 @@ st.sidebar.header("Filter Options")
 # Check if the dataframe loaded successfully before proceeding
 if df is not None:
     category_options = ['Any'] + sorted(df['Category'].unique().tolist())
-    selected_category = st.sidebar.selectbox("Filter by Category:", options=category_options)
+    selected_category = st.sidebar.selectbox("Filter by Product Category:", options=category_options)
 
     tier1_options = ['Any'] + sorted(list(STRATEGY_HIERARCHY.keys()))
     selected_tier1 = st.sidebar.selectbox("Tier 1 Sustainability Strategy:", options=tier1_options)
@@ -102,7 +102,7 @@ if df is not None:
 
 
 # --- MAIN PAGE LAYOUT ---
-st.title("🛠️ Eco-Scamper: A Sustainable Product Design Toolkit")
+st.title("🛠️ Eco-SCAMPER: A Sustainable Product Design Toolkit")
 # --- CUSTOM BUTTON STYLES ---
 st.markdown("""
 <style>
